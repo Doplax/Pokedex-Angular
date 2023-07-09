@@ -1,5 +1,8 @@
 # PokeAngular Pokedex 🐾
 
+### You can check out the live project [here](https://doplaxpokeangular.netlify.app/).
+
+
 Welcome to the PokeAngular Pokedex, an interactive and modern Pokedex built with Angular.
 
 ![App screenshot](./pokedex/src/assets/pokeangular.jpg)
@@ -10,7 +13,6 @@ The PokeAngular Pokedex is a fun, interactive application for all Pokémon fans.
 
 The aim of this project was not only to create a functional Pokedex but also to gain more experience and learn more about Angular, TypeScript, and working with APIs.
 
-You can check out the live project [here](https://doplaxpokeangular.netlify.app/).
 
 ## Features 🌟
 
