@@ -1,17 +1,17 @@
 <div class="container">
   <div class="row header">
-    <h1 class="title col-sm-12 col-md-12 col-lg-3 col-xl-3">Pokédex</h1>
+    <img src="../../../assets/Pokédex_logo.png" class="title col-sm-12 col-md-12 col-lg-3 col-xl-3"/>
     <mat-form-field class="search col-sm-12 col-md12 col-lg-8 col-xl-8" flatlabel>
       <mat-label> Pokemon Name</mat-label>
       <input matInput [formControl]="search" (keydown.enter)="onSearchPokemon()" placeholder=" Pikachu or Pokemon Number">
     </mat-form-field>
     <section class="col-12">
-      <mat-slide-toggle
+      <!--<mat-slide-toggle
         color="primary"
         [checked]="classicMode"
         (change)="classicMode = !classicMode">
           {{classicMode ? "classic": 'Gif'}}
-      </mat-slide-toggle>
+      </mat-slide-toggle>-->
     </section>
   </div>
   <img class="bg__pokeball" alt="pokeball" src="../../../assets/pokeball-background.png">
@@ -21,7 +21,7 @@
       <mat-progress-bar mode="indeterminate"></mat-progress-bar>
     </div>
   </div>
-  <div>
+  <div class="main--container">
     <div *ngIf="!isSearching" class="row pokemon__list" (scroll)="onScroll($event)" >
       <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4" *ngFor="let pokemon of pokemons" (click)="onDetail(pokemon)" >
         <div class="card {{'bg-color-' + getPrincipalType(pokemon.types) + '-light'}}">
