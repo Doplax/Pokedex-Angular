@@ -1,6 +1,19 @@
 <div class="container">
   <div class="row header">
     <h1 class="title col-sm-12 col-md-12 col-lg-3 col-xl-3">Pokédex</h1>
+    <mat-form-field class="search col-sm-12 col-md12 col-lg-8 col-xl-8" flatlabel>
+      <mat-label> Pokemon Name</mat-label>
+      <input matImput [formControl]="search" (keydown.enter)="onSearchPokemon()" placeholder=" Picachu or Pokemon Number">
+    </mat-form-field>
+    <section class="col-12">
+      <mat-slide-toggle
+        color="primary"
+        [checked]="classicMode"
+        (change)="classicMode = !classicMode">
+          {{classicMode ? "classic": 'Gif'}}
+      </mat-slide-toggle>
+    </section>
   </div>
+  <img src="bg__pokeball" alt="">
 </div>
 
