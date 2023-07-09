@@ -4,7 +4,7 @@ import { PreogressBarComponent } from "./preogress-bar/preogress-bar.component";
 
 
 @NgModule({
-  declarations: [],
+  declarations: [PreogressBarComponent], // Aquí incluye el componente
   imports: [
     CommonModule
   ],
@@ -12,8 +12,4 @@ import { PreogressBarComponent } from "./preogress-bar/preogress-bar.component";
     PreogressBarComponent
   ],
 })
-
-
-export class SharedModule {
-
-}
+export class SharedModule { }
