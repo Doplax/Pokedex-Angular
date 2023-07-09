@@ -57,12 +57,13 @@ export class PokemonListComponent implements OnInit {
     const value = this.search.value;
     if(value === '') {
       this.isSearching = false;
+      this.getPage(this.offset); // Obtener la lista de Pokémon si la búsqueda está vacía
     } else {
       this.isSearching = true;
       this.isLoading = true;
       this.pokemonService.getPokemonDetail(value)
       .subscribe((pokemon: PokemonDetail) => {
-        this.searchPokemon = pokemon;
+        this.pokemons = [pokemon]; // Reemplaza la lista de Pokémon con el Pokémon buscado
         this.isLoading = false;
       }, (error: any) => {
         this.isLoading = false;
@@ -75,6 +76,7 @@ export class PokemonListComponent implements OnInit {
     }
   }
 
+  
   onScroll(event: Event): void {
     const element: HTMLDivElement = event.target as HTMLDivElement;
     if(element.scrollHeight - element.scrollTop < 1000) {

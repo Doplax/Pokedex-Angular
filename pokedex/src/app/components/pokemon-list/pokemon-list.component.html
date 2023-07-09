@@ -22,7 +22,7 @@
     </div>
   </div>
   <div class="main--container">
-    <div *ngIf="!isSearching" class="row pokemon__list" (scroll)="onScroll($event)" >
+    <div class="row pokemon__list" (scroll)="onScroll($event)" >
       <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4" *ngFor="let pokemon of pokemons" (click)="onDetail(pokemon)" >
         <div class="card {{'bg-color-' + getPrincipalType(pokemon.types) + '-light'}}">
           <img class="card__bg" src="../../../assets/pokeball-background.png" alt="pokeball-card">
@@ -38,8 +38,5 @@
         </div>
       </div>
     </div>
-  </div>
-  <div *ngIf="isSearching" class="pokemon__list" (scroll)="onScroll($event)">
-
   </div>
 </div>
