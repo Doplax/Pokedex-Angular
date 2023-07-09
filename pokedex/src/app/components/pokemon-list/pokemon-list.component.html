@@ -3,7 +3,7 @@
     <h1 class="title col-sm-12 col-md-12 col-lg-3 col-xl-3">Pokédex</h1>
     <mat-form-field class="search col-sm-12 col-md12 col-lg-8 col-xl-8" flatlabel>
       <mat-label> Pokemon Name</mat-label>
-      <input matImput [formControl]="search" (keydown.enter)="onSearchPokemon()" placeholder=" Picachu or Pokemon Number">
+      <input matInput [formControl]="search" (keydown.enter)="onSearchPokemon()" placeholder=" Pikachu or Pokemon Number">
     </mat-form-field>
     <section class="col-12">
       <mat-slide-toggle
@@ -14,6 +14,32 @@
       </mat-slide-toggle>
     </section>
   </div>
-  <img src="bg__pokeball" alt="">
-</div>
+  <img class="bg__pokeball" alt="pokeball" src="../../../assets/pokeball-background.png">
+  <div class="row justify-content-center" *ngIf="isLoading">
+    <div class="col-4">
+      <span>Loading...Please wait!!</span>
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </div>
+  </div>
+  <div>
+    <div *ngIf="!isSearching" class="row pokemon__list" (scroll)="onScroll($event)" >
+      <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4" *ngFor="let pokemon of pokemons" (click)="onDetail(pokemon)" >
+        <div class="card {{'bg-color-' + getPrincipalType(pokemon.types) + '-light'}}">
+          <img class="card__bg" src="../../../assets/pokeball-background.png" alt="pokeball-card">
+          <div class="card__info">
+            <h2 class="color-white">{{pokemon.name}}</h2>
+            <span class="color-white {{'bg-color-' + getPrincipalType(pokemon.types)}}" *ngFor="let type of pokemon.types">
+              {{type.type.name}}
+            </span>
+          </div>
+          <div class="card__img">
+            <img *ngIf="classicMode" [src]="pokemon.sprites.front_default" [alt]="pokemon.name">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="isSearching" class="pokemon__list" (scroll)="onScroll($event)">
 
+  </div>
+</div>
