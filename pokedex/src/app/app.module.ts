@@ -9,7 +9,6 @@ import { MaterialModule } from './material.mocule';
 import { PokemonListComponent } from './components/pokemon-list/pokemon-list.component';
 import { PokemonDetailComponent } from './components/pokemon-detail/pokemon-detail.component';
 import { ReactiveFormsModule } from '@angular/forms';
-//import { PreogressBarComponent } from './shared/preogress-bar/preogress-bar.component';
 import { SharedModule } from './shared/shared.module'
 import { PokemonService } from './services/pokemon.service';
 
@@ -20,7 +19,6 @@ import { PokemonService } from './services/pokemon.service';
     AppComponent,
     PokemonListComponent,
     PokemonDetailComponent,
-    //PreogressBarComponent
   ],
   imports: [
     BrowserModule,

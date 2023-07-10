@@ -1,15 +1,15 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { PreogressBarComponent } from "./preogress-bar/preogress-bar.component";
+import { ProgressBarComponent } from "./progress-bar/progress-bar.component";
 
 
 @NgModule({
-  declarations: [PreogressBarComponent], // Aquí incluye el componente
+  declarations: [ProgressBarComponent], // Aquí incluye el componente
   imports: [
     CommonModule
   ],
   exports: [
-    PreogressBarComponent
+    ProgressBarComponent
   ],
 })
 export class SharedModule { }
